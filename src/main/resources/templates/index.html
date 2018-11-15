@@ -12,7 +12,14 @@
 <body>
 <h1>Kunden</h1>
 <table class="table table-striped">
-
+	
+	<form method="post">
+		<input type="text" name="farbe"  > </input>
+		<p>
+			<button type="submit"> suchen </button>
+		</p>
+	</form>
+	
     <thead>
     <tr th:each="kunde : ${kunden}">
         <td th:text="${kunde.name}">Vorwerk & Co. KG</td>

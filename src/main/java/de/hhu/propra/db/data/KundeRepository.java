@@ -8,4 +8,6 @@ import de.hhu.propra.db.entities.Kunde;
 
 public interface KundeRepository extends CrudRepository<Kunde, Long> {
 	List<Kunde> findAll();
+	
+	List<Kunde> findAllByAutos_Farbe(String farbe);
 }
