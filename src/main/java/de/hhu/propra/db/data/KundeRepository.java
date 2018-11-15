@@ -1,8 +1,11 @@
 package de.hhu.propra.db.data;
 
-import de.hhu.propra.db.entities.Kunde;
+import java.util.List;
+
 import org.springframework.data.repository.CrudRepository;
 
-public interface KundeRepository extends CrudRepository<Kunde, Long> {
+import de.hhu.propra.db.entities.Kunde;
 
+public interface KundeRepository extends CrudRepository<Kunde, Long> {
+	List<Kunde> findAll();
 }
