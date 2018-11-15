@@ -16,8 +16,7 @@
     <thead>
     <tr th:each="kunde : ${kunden}">
         <td th:text="${kunde.name}">Vorwerk & Co. KG</td>
-        <td th:text="${kunde.adresse.strasse}+', '+${kunde.adresse.plz}+' '+${kunde.adresse.stadt}">Mühlenweg 17-37, 42270 Wuppertal</td>
-        <td th:text="${kunde.getGesamtzahl()}">89140</td>
+        <td th:text="${kunde.stadt}+' '+${kunde.plz}">Mühlenweg 17-37, 42270 Wuppertal</td>
         <td th:each="auto : ${kunde.autos}">
             <ul>
                 <li th:text="${auto.marke}+' -- '+${auto.farbe}+' ('+${auto.hubraum}+' ccm)'"></li>
