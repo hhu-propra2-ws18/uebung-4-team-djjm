@@ -1,5 +1,5 @@
+<html xmlns:th="http://www.thymeleaf.org" lang="de">
 <!doctype html>
-<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -14,21 +14,13 @@
 <table class="table table-striped">
 
     <thead>
-    <tr>
-        <th>Name</th>
-        <th>Stadt</th>
-        <th>PLZ</th>
-        <th>Autos</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-        <td>Vorwerk & Co. KG</td>
-        <td>Wuppertal</td>
-        <td>89140</td>
-        <td>
+    <tr th:each="kunde : ${kunden}">
+        <td th:text="${kunde.name}">Vorwerk & Co. KG</td>
+        <td th:text="${kunde.adresse.strasse}+', '+${kunde.adresse.plz}+' '+${kunde.adresse.stadt}">Mühlenweg 17-37, 42270 Wuppertal</td>
+        <td th:text="${kunde.getGesamtzahl()}">89140</td>
+        <td th:each="auto : ${kunde.autos}">
             <ul>
-                <li>Volkswagen -- schwarz (2000 ccm)</li>
+                <li th:text="${auto.marke}+' -- '+${auto.farbe}+' ('+${auto.hubraum}+' ccm)'"></li>
             </ul>
         </td>
     </tr>

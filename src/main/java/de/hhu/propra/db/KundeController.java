@@ -12,7 +12,9 @@ public class KundeController{
     KundeRepository kunden;
 
     @GetMapping("/")
+
     public String index(Model model) {
+        model.addAttribute("kunden", kunden.findAll());
         return "index";
     }
 }
